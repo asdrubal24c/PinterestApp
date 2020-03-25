@@ -1,2 +1,22 @@
-<h1>Pages#about</h1>
-<p>Find me in app/views/pages/about.html.erb</p>
+<div class="container">
+<div class="row mt-20">
+<div class="col-md-12">
+<div class="card" style="width: 18rem;">
+  <!--<%= image_tag("", :alt => "rss feed", :class => "card-img-top") %>-->
+  <div class="card-body">
+    <h5 class="card-title text-center">Mi Pinterest App</h5>
+    <p class="card-text text-center">Proyecto elaborado con el fin de iniciarnos en Rails. Sobre su contenido puedes ver peliculas y series de acuerdo a las sig categorias:</p>
+  </div>
+  <ul class="list-group list-group-flush text-center">
+    <li class="list-group-item">Clasicos</li>
+    <li class="list-group-item">Horror</li>
+    <li class="list-group-item">Documentales</li>
+    <li class="list-group-item">Muchos +</li>
+  </ul>
+  <div class="card-body text-center">
+  <%= link_to "Volver al Inicio", {controller: "pages", action: "index"}, { class: "card-link" } %> 
+  </div>
+</div>
+</div>
+</div>
+</div>
