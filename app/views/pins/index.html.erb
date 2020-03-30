@@ -29,6 +29,11 @@
             <% end %>   		
           </div>
         </div>
+        <% if user_signed_in? %>
+        <div class="row">
+          <%= link_to 'Crear', { :controller => "/pins", :action => "new" } %>
+        </div>
+        <% end %>
       </div>
     </section>       
 </main>
