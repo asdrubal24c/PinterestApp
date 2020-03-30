@@ -1,25 +1,50 @@
- <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <%= link_to "Mi Pinterest", { :controller => :pages, :action => :index }, { class: "navbar-brand" } %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-          <%= link_to "Inicio", { :controller => :pages, :action => :index }, { class: "nav-link" } %>
-          </li> 
-          <li class="nav-item active">
-          <%= link_to "Mis Categorias", { :controller => :pins, :action => :index }, { class: "nav-link" } %>
-          </li>             
-          <li class="nav-item">
-          <%= link_to "Acerca de", { :controller => :pages, :action => :about }, { class: "nav-link" } %>
-          </li>
-          <li class="nav-item">
-          <%= link_to "Contacto", { :controller => :pages, :action => :contact }, { class: "nav-link" } %>
-          </li>          
-        </ul>
-      </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top fondo-color">
+    <%= link_to "Mi Pinterest App", { :controller => "/pins", :action => "index" }, { class: "navbar-brand font-weight-bolder mr-3" } %>
+    <button class="navbar-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsDefault">
+    
+    	<ul class="navbar-nav ml-auto align-items-center">
+    		<li class="nav-item">
+         <%= link_to "Home", { :controller => "/pins", :action => "index" }, { class: "nav-link active" } %>
+    		</li>
+    		<li class="nav-item">
+          <%= link_to "Acerca de", { :controller => "/pages", :action => "about" }, { class: "nav-link" } %>
+    		</li>
+        <li class="nav-item  dropdown">
+	      <a class="nav-link" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Contacto
+    		</a>
+        	<div class="dropdown-menu dropdown-menu-right shadow-lg" aria-labelledby="dropdown02">
+    			<h4 class="dropdown-header display-4">Asdrubal Carrasquel<br/> acarrasquel@macal.cl</h4>
+    			<div class="dropdown-divider">
+    			</div>
+    		</div>
+       </li>  
+
+         <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to destroy_user_session_path, method: :delete, :class=> "nav-link" do %><i class="fa fa-sign-out" aria-hidden="true"></i><% end %>
+              <li>
+              <% if current_user.image.attached? %>
+              <li class="nav-item">
+                    <p class="user_name">Bienvenido, <%= current_user.name %> </p>
+              </li>
+              <li class="nav-item">
+              <%= image_tag current_user.image.variant(resize: '30x30^', extent: '30x30', gravity: 'Center'), class: "rounded-circle mr-2" %>
+              </li>
+              <% end %>            
+           
+            <% else %>
+              <li class="nav-item">
+              <%= link_to new_user_session_path, :class=> "nav-link" do %><i class="fa fa-sign-in" aria-hidden="true"></i> Ingresar<% end %>
+              <li>
+              <li class="nav-item">
+               <%= link_to new_user_registration_path, :class=> "nav-link" do %><i class="fa fa-user-plus" aria-hidden="true"></i> Registrarse<% end %>
+              </li>
+          <% end %>
+    	</ul>
     </div>
-  </nav>
+    </nav>    

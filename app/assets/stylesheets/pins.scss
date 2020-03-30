@@ -1,3 +1,171 @@
 // Place all the styles related to the Pins controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import "bootstrap";
+
+@import url('https://fonts.googleapis.com/css?family=Hind+Vadodara&display=swap');
+
+.letter-color{
+    color: #1e326d!important;
+}
+
+.fondo-1{
+    background-image: url('Principal/classic.jpg');
+    background-size: cover!important;
+}
+
+.fondo-2{
+    background-image: url('Principal/horror.jpg');
+    background-size: cover!important;
+}
+
+.fondo-3{
+    background-image: url('Principal/doc.jpg');
+    background-size: contain!important;
+}
+
+.fondo-4{
+    background-image: url('Principal/accion.jpg');
+    background-size: cover!important;
+}
+
+.fondo-header{
+background-image: linear-gradient(to right top, #bba6b2, #ad95aa, #9c86a3, #87789e, #6d6b99, #5b5f8d, #495380, #364774, #2e385f, #262a4a, #1c1d37, #130f25);
+}
+
+.fondo-body{
+    background-image: url('Principal/fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.fondo-color{
+  background-color: #bcbfc4!important;
+}
+
+  body {
+    background-color: white!important;
+    padding-top: 70px; }
+  
+  
+  img {
+    max-width: 100%; }
+  
+  
+  a, .a:hover {
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s; }
+  
+  
+  .container-fluid {
+    width: 94%;
+    margin: 0px auto;
+    max-width: 94%; }
+  
+  
+  .border-round-0 {
+    border-radius: 0; }
+  
+  
+  .mt-neg100 {
+    margin-top: -100px; }
+  
+  
+  .min-50vh {
+    min-height: 50vh; }
+  
+  
+  .dropdown-header {
+    font-size: 1.5rem; }
+  
+  
+  .fixed-top {
+    border-bottom: 1px solid #f1f1f1; }
+  
+  
+  footer.footer {
+    border-top: 1px solid #f1f1f1; }
+  
+  .user_name{
+    display: block;
+    padding: 0.5rem 1rem!important;    
+    margin: 0px!important;
+    font-weight: bold;
+  }
+
+  .nav-link, .dropdown-item {
+    font-weight: 700; }
+  
+  
+  .navbar {
+    padding: 0.5rem 2rem; }
+  
+  
+  .overlay {
+    position: absolute;
+    top: 0; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    -webkit-transition: .2s ease;
+    transition: .2s ease;
+    background-color: #008CBA; }
+  
+  .list-group-item{
+    background-color: #adadad00!important;
+  }
+
+  .card {
+    border: 0;
+    background-color: #adadad00!important;
+  }
+ 
+  .card-pin:hover .overlay {
+    opacity: .5;
+    border: 5px solid #f3f3f3;
+    -webkit-transition: ease .2s;
+    transition: ease .2s;
+    background-color: #000000;
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in; }
+  
+  
+  .more {
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-transform: uppercase;
+    -webkit-transform: translate(-20%, -20%);
+            transform: translate(-20%, -20%);
+    -ms-transform: translate(-50%, -50%); }
+  
+
+  .card-pin:hover .card-title {
+    color: #ffffff;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1.2em; }
+  
+  .card-pin:hover .more a {
+    text-decoration: none;
+    color: #ffffff; }
+  
+  
+  .card-pin:hover .download a {
+    text-decoration: none;
+    color: #ffffff; }
+  
+
+  .social {
+    position: relative;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  
+
+  .social .fa {
+    margin: 0 3px; }

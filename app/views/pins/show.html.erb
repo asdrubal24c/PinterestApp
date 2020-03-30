@@ -1,19 +1,21 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @pin.name %>
-</p>
+<div class="container">
+  <div class="card">
+  <div class="card-body">
+      <h4 class="card-title text-center"><%= @pin.name %></h4>
+      <p class="card-text text-center"><%= @pin.descripcion %></p>
+      <div class="form-group">
+      <%= link_to 'Editar', edit_pin_path(@pin), class: "btn btn-primary" %>  
+      <%= link_to 'Atras', pins_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+    <% if @pin.images.attached? %>
+      <% @pin.images.each do |image| %>
+      <%= image_tag image ,class:"card-img-top"  %>
+      <% end %>
+    <% end %>
+    
+  </div>
+</div>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= @pin.descripcion %>
-</p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @pin.image %>
-</p>
-
-<%= link_to 'Edit', edit_pin_path(@pin) %> |
-<%= link_to 'Back', pins_path %>

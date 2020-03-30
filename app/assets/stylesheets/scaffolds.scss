@@ -1,5 +1,9 @@
+@import "bootstrap";
+
 body {
-  background-color: #fff;
+  background-image: url('Principal/fondo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #333;
   margin: 33px; }
 
@@ -17,11 +21,11 @@ a {
   color: #000; }
 
 a:visited {
-  color: #666; }
+  color: #fff; }
 
 a:hover {
   color: #fff;
-  background-color: #000; }
+ }
 
 th {
   padding-bottom: 5px; }
@@ -63,3 +67,34 @@ div.actions {
 
 label {
   display: block; }
+
+
+
+  .authform {
+    padding-top: 30px;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .authform form {
+    padding-bottom: 40px;
+  }
+  .authform .right {
+    float: right !important;
+  }
+  .authform .button {
+    @extend .btn;
+    @extend .btn-primary;
+    background-color: #007bff00;
+  }
+ 
+  #error_explanation:not(:empty) {
+    @extend .alert;
+    @extend .alert-danger;
+  }
+  #error_explanation h2 {
+    font-size: 16px;
+  }
+  .button-xs {
+    @extend .btn;
+    @extend .btn-primary;
+  }
